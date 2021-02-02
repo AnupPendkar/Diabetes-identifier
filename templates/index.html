@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url({{url_for('static', filename='diabetes2.jpg')}});
+            background-size: 1350px 700px;
+            background-repeat: no-repeat
+        }
+
+        .container {
+            padding: 2px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 70px;
+            padding: 2px;
+            text-align: center;
+            font-size: 46px
+        }
+
+        .form-group input {
+            text-align: center;
+            width: 427px;
+            padding: 1px;
+            margin: 3px auto;
+            font-size: 25px;
+            font-family: 'Architects Daughter', cursive;
+            border-radius: 5px;
+        }
+
+        .form-group input:hover {
+            width: 400px;
+            height: 50px;
+        }
+
+        button {
+            background-color: rgb(195, 15, 15);
+            width: 126px;
+            margin: 36px 22px;
+            height: 32px;
+            border-radius: 9px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(255, 24, 24)
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1>Diabetes Identifier</h1>
+
+        <form method="POST" action="{{ url_for('submit')}}" accept-charset="utf-8">
+            <div class="form-group">
+                <input type="text" name="pregnancies" placeholder="pregnancies" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="blood_pressure" placeholder="blood_pressure" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="skin_thickness" placeholder="skin_thickness" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="ensulin" placeholder="ensulin" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="glucose" placeholder="glucose" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="BMI" placeholder="BMI" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="DPF" placeholder="DPF" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="age" placeholder="age" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
