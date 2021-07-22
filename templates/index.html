@@ -1,146 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diabetes-identifier</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-image: url({{url_for('static', filename='diabetes2.jpg')}});
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+    <link rel="stylesheet" href="../static/style.css" />
+    <script
+      src="https://kit.fontawesome.com/5752404560.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <img src="../static/diabetes2.jpg" alt="" />
+      <div class="heading">
+        <h1>diabetes identifier</h1>
+      </div>
 
-        .container {
-            padding: 0px;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 70px;
-            padding: 2px;
-            text-align: center;
-            font-size: 46px
-        }
-
-        form {
-            text-align: center;
-        }
-
-        .form-group input {
-            text-align: center;
-            width: 524px;
-            padding: 5px;
-            margin: 5px auto;
-            font-size: 19px;
-            font-family: 'Architects Daughter', cursive;
-            border-radius: 12px;
-        }
-
-        .form-group input:hover {
-            width: 400px;
-            height: 50px;
-        }
-
-        button {
-            background-color: rgb(195, 15, 15);
-            width: 126px;
-            margin: 36px 22px;
-            height: 44px;
-            border-radius: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: rgb(255, 24, 24)
-        }
-       @media(max-width: 294px){
-                footer{
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    min-width: 435px;;
-                    width: 100%;
-                    position: fixed;
-                    background-color: #383737;
-                }
-            }
-
-            footer{
-                left: 0;
-                right: 0;
-                bottom: 0;
-                min-width: 435px;;
-                width: 100%;
-                background-color: #383737;
-            }
-        footer li{
-            display: inline-block;
-            margin-right: 30px;
-        }
-        footer a{
-            font-size: 21px;
-        }
-    </style>
-</head>
-
-<body>
-
-
-    <div class="container">
-        <h1>Diabetes Identifier</h1>
-
-        <form method="POST" action="{{ url_for('submit')}}" accept-charset="utf-8">
-            <div class="form-group">
-                <input type="text" name="pregnancies" placeholder="No. Of  Pregnancies eg. 0" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="blood_pressure" placeholder="Blood Pressure(mmHg) eg. 80" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="skin_thickness" placeholder="Skin Thickness(mm) eg. 20" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="ensulin" placeholder="Insulin Level(IU/mL) eg. 80" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="glucose" placeholder="Glucose(mg/dL) eg. 80" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="BMI" placeholder="Body Mass Index(BMI) eg. 23.1" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="DPF" placeholder="Diabetes Pedigree Function(DPF) eg. 0.52" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="age" placeholder="Age eg. 34" required>
-            </div>
-
-            <button type="submit">Predict</button>
-        </form>
+      <form
+        method="POST"
+        action="{{ url_for('submit')}}"
+        accept-charset="utf-8"
+      >
+        <div class="form-group">
+          <input type="text" name="age" placeholder="age" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="BMI" placeholder="BMI" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="glucose" placeholder="glucose" />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="blood_pressure"
+            placeholder="blood_pressure"
+          />
+        </div>
+        <div class="form-group">
+          <input type="text" name="pregnancies" placeholder="pregnancies" />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="skin_thickness"
+            placeholder="skin_thickness"
+          />
+        </div>
+        <div class="form-group">
+          <input type="text" name="ensulin" placeholder="ensulin" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="DPF" placeholder="DPF" />
+        </div>
+        <div class="form-group">
+          <button type="submit">Predict</button>
+        </div>
+      </form>
     </div>
 
-    <footer class="bd-footer text-muted">
-        <div class="container-fluid p-3 p-md-5">
-            <h5>For More Info. About My Project Visit At :</h5>
-            <ul class="bd-footer-links">
-                <li><a href="https://github.com/AnupPendkar/Diabetes-identifier">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/anup-pendkar-8a9826196/">LinkedIn</a></li>
-            </ul>
-            <p>Designed and built with all love by Anup Pendkar.</p>
-            <p>If You Liked My Work Please Let Me Know On LinkedIn. Also Your Suggestions Are Happily Being Heard. Thank You So Much For Your Valuable Time</p>
-        </div>
+    <footer>
+      <h3>For More Info. About My Project Visit At :</h3>
+      <ul>
+        <li>
+          <div class="git-links links">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/AnupPendkar/Diabetes-identifier"
+              >GitHub</a
+            >
+          </div>
+        </li>
+        <li>
+          <div class="link-links links">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/anup-pendkar-8a9826196/"
+              >LinkedIn</a
+            >
+          </div>
+        </li>
+      </ul>
+      <h5>GitHub LinkedIn Designed and built with all love by Anup Pendkar.</h5>
+      <p>©2020 Anup Pendkar. All rights Reserved</p>
     </footer>
-
- </body>
-
+  </body>
 </html>
