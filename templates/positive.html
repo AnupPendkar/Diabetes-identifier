@@ -1,73 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Positive Results</title>
+    <script
+      src="https://kit.fontawesome.com/5752404560.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    main {
+      position: relative;
+      padding: 3rem 5rem;
+      height: 93vh;
+      text-align: center;
+    }
+    main::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0, 0.5);
+    }
+    .title {
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    .map {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      font-size: 1.4rem;
+      transform: translate(-50%, -30%);
+      z-index: 3;
+      color: white;
+    }
+    .map a,
+    .map i {
+      color: rgb(52, 52, 238);
+      font-weight: 700;
+      margin-right: 0.8rem;
+      font-size: 1.8rem;
+    }
+    .map a:hover {
+      color: rgb(71, 71, 255);
+    }
+    footer {
+      width: 100%;
+      background: rgb(46, 45, 45);
+      color: #999;
+      padding: 0 9rem;
+      padding-top: 2rem;
+    }
 
-<head>
-   <title>Positive Results</title>
-   <link rel="stylesheet" type="text/css" href="style.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
-   <style>
-        body {
-            background-image: url({{url_for('static', filename='positive.jpg')}}) ;
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+    footer h3 {
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 4rem;
+      margin-bottom: 1rem;
+    }
+    .links {
+      cursor: pointer;
+    }
+    a,
+    i {
+      text-decoration: none;
+      color: rgb(236, 234, 234);
+    }
+    .git-links:hover i {
+      color: rgb(122, 119, 119);
+    }
+    .link-links:hover i {
+      color: rgb(48, 48, 252);
+    }
+    h5 {
+      letter-spacing: 0.03rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    p {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 745px) {
+      .map {
+        font-size: 2rem;
+      }
+      footer {
+        padding: 0 3rem;
+        padding-top: 2rem;
+      }
+    }
 
-        h1{
-            font-family: 'Potta One', cursive;
-        }
-         
-        footer{
-            position: fixed;
-            margin-top: 600px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #383737;
-        } 
+    @media (max-width: 475px) {
+      main {
+        padding: 3rem 5rem;
+        height: 90vh;
+      }
+      img {
+        width: 100%;
+        height: 80vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      footer {
+        padding: 0 2rem;
+        padding-top: 2rem;
+      }
+    }
 
-        footer li{
-            display: inline-block;
-            margin-right: 30px;
-        }
+    @media (max-width: 410px) {
+    }
+  </style>
 
-        footer a{
-            font-size: 21px;
-        }
-        .container a{
-            color:rgb(19, 16, 16)
-        }
-
-        .container a:hover{
-            color: rgb(77, 70, 70);
-        }
-   </style>
-</head>
-
-<body>
-    <div class="container">
-            <h1>Your Results Are Positive</h1>
-            <h1>Take Proper Medication</h1>
-            <h1>click on map icon map icon to show nearby hospitals who treat diabetes</h1>
-            <a href="https://www.google.com/search?rlz=1C1CHBF_enIN885IN885&sz=0&tbm=lcl&sxsrf=ALeKk02-EXeZ5nqO54mybZLMjOmev09Itg%3A1612383252511&ei=FAQbYOPeHtrhz7sPiYeUwAY&q=diabetes+hospital+near+me&oq=diabetes+hospital+near+me&gs_l=psy-ab.12...0.0.0.9381.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.WZV8-vZJOjI#rlfi=hd:;si:;mv:[[19.2681362,78.68213779999999],[17.2149097,77.2301541]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2"
-            ><i class="material-icons" style="font-size:100px">place</i></a>
-    </div>
-    <footer class="bd-footer text-muted">
-        <div class="container-fluid p-3 p-md-5">
-            <h5>For More Info. About My Project Visit At :</h5>
-            <ul class="bd-footer-links">
-                <li><a href="https://github.com/AnupPendkar/Diabetes-identifier">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/anup-pendkar-8a9826196/">LinkedIn</a></li>
-            </ul>
-            <p>Designed and built with all love by Anup Pendkar.</p>
-            <p>If You Liked My Work Please Let Me Know On LinkedIn. Also Your Suggestions Are Happily Being Heard. Thank You So Much For Your Valuable Time</p>
-        </div>
+  <body>
+    <main>
+      <img src="../static/diabetes2.jpg" alt="" />
+      <h1 class="title">Your results are positive</h1>
+      <div class="map">
+        <a
+          href="https://www.google.com/maps/search/diabetes+hospital+near+me/@18.5436183,77.5671361,14z/data=!3m1!4b1"
+          ><i class="fas fa-map-marker-alt"></i>Click here</a
+        >to get the list hospitals for diabetes
+      </div>
+    </main>
+    <footer>
+      <h3>For More Info. About My Project Visit At :</h3>
+      <ul>
+        <li>
+          <div class="git-links links">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/AnupPendkar/Diabetes-identifier"
+              >GitHub</a
+            >
+          </div>
+        </li>
+        <li>
+          <div class="link-links links">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/anup-pendkar-8a9826196/"
+              >LinkedIn</a
+            >
+          </div>
+        </li>
+      </ul>
+      <h5>GitHub LinkedIn Designed and built with all love by Anup Pendkar.</h5>
+      <p>©2020 Anup Pendkar. All rights Reserved</p>
     </footer>
-
-</body>
-
+  </body>
 </html>
